@@ -1,0 +1,857 @@
+---
+title: "PW_Sales_Dash"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+#Package used to display Data Table
+library(DT)
+#Package used to make dashabord easily in shiny
+library(flexdashboard)
+#Package used to generate forecast of future sales
+library(forecast)
+#Package to read data from Google Sheets
+library(googlesheets)
+#Package to do nice chart visualization
+library(highcharter)
+#Package used for data management
+library(lubridate)
+#Package to get Dplyr universe
+library(tidyverse)
+#Package used to do treemap layout
+library(treemap)
+#package used to get easy to read color palette
+library(viridisLite)
+#Package usef for the rollapply and nas (omit, locf) functions
+library(zoo)
+
+# Function to adapt R to local time - Code ran in the US and France
+lct <- Sys.getlocale("LC_TIME"); Sys.setlocale("LC_TIME", "C")
+```
+
+```{r Getting_Data}
+# Guetting the Data from Google Sheets
+
+# Connection to the Google SpreadSheet 
+# PW_Sheet <- gs_title("PW_Data")
+
+# Pulling the data from a given a sheet - Need to define the range
+# PW_Data_gs <- gs_read(PW_Sheet, ws = "Sales_Data", range = cell_limits(c(2, 1), c(NA, 15)), col_names = TRUE)
+
+# Pulling the date from the Google Sheet
+    # New weeks start on Monday
+    # Follow a 4-4-5 Pattern for each quarter (Jan 4 Week month, Feb 4 week month, March 5 week month)
+#PW_Calendar_gs <- gs_read(PW_Sheet, ws = "PW_Calendar", range = cell_limits(c(1, 1), c(NA, 4)), col_names = TRUE)
+
+# Converting data into data format
+# PW_Calendar = PW_Calendar_gs %>%
+#    mutate(Date = as.Date(Date, format = "%m/%d/%Y")) %>%
+#    mutate(Fiscal_Month_Start = as.Date(Fiscal_Month_Start, format = "%m/%d/%Y")) %>%
+#    mutate(Fiscal_Week_Start = as.Date(Fiscal_Week_Start, format = "%m/%d/%Y") )
+
+# set working directory
+setwd('C:/Users/akhelifa/Desktop/PW_Wachi')
+# Importing local CSV File
+PW_Calendar = read.csv('Date_PW.csv', stringsAsFactors = FALSE) %>%
+    mutate(Date = as.Date(Date, format = "%m/%d/%Y")) %>%
+    mutate(Fiscal_Month_Start = as.Date(Fiscal_Month_Start, format = "%m/%d/%Y")) %>%
+    mutate(Fiscal_Week_Start = as.Date(Fiscal_Week_Start, format = "%m/%d/%Y") )
+
+PW_Data_gs = read.csv('Data_PW_Dummy.csv', stringsAsFactors = FALSE) %>%
+    mutate(Date = as.Date(Date, format = "%m/%d/%Y"))
+```
+
+```{r Basic_Cleaning}
+# Cleaning the data
+PW_Data = PW_Data_gs %>%
+    # Keep only fully populated rows
+    filter(complete.cases(.)) %>% 
+    # Convert to date format
+    mutate(Date = as.Date(Date, format = "%d-%b-%Y")) %>%
+    # Give a two day buffer to populate the data
+    filter(Date < Sys.Date() + 2) %>%
+    # One row per sales
+    mutate(Count = 1) %>%
+    # Keep only the specific column
+    select(Date, Collection, Line, Color, Eyewear, Gender, Age, Count) %>%
+    # Add the date data to the main data
+    left_join(PW_Calendar, by = c("Date"))
+
+# Convert the daily sales into Monthly sales / Per Line
+PW_Sales_Month_Line = PW_Data %>%
+    group_by(Collection, Line, Fiscal_Month_Start) %>%
+    summarize(Count = sum(Count)) %>%
+    ungroup()
+# Get the Max date for the Monthly sales - Keep onlyh finished months
+Max_Date = max(PW_Sales_Month_Line$Fiscal_Month_Start) - months(1)
+
+# Convert the daily sales into Monthly sales / Per Eyewear (Solar, Optical, frame, solar optical)
+PW_Sales_Month_Eyewear = PW_Data %>%
+    group_by(Eyewear, Fiscal_Month_Start) %>%
+    summarize(Count = sum(Count)) %>%
+    ungroup()
+
+# Get the first week of sales for every line
+PW_First_Week = PW_Data %>%
+    group_by(Collection, Line) %>%
+    summarise(First_Week = min(Fiscal_Week_Start)) %>%
+    ungroup()
+
+# Convert the daily sales into Weekly sales / Per Line
+PW_Sales_Week = PW_Data %>%
+    group_by(Collection, Line, Fiscal_Week_Start) %>%
+    summarize(Count = sum(Count)) %>%
+    ungroup()
+
+# Convert the daily sales into Weekly sales / Per Eyewear
+PW_Data_Eyewear = PW_Data %>%
+    group_by(Collection, Line, Eyewear) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup()
+
+PW_Data_Color = PW_Data %>%
+    group_by(Collection, Line, Color) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup()
+
+# Aggregate Sales based on Gender of Customers
+PW_Data_Gender = PW_Data %>%
+    group_by(Collection, Line, Gender) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup()
+
+# Aggregate Sales based on Gender of Customers
+PW_Data_Age = PW_Data %>%
+    mutate(Age = factor(Age, levels = c("00-15", "15-30", "30-45", "45-60", "60 +", "Online", "SAV"))) %>%
+    group_by(Collection, Line, Age) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup()
+
+```
+
+
+```{r Season_Function}
+# func_get_season_group_month - Get Season at at Group_Level
+  # Input:
+    # data : The data frame we want to get seaosanlity from
+    # type: The factor used for segmentation - Seasonal factors for each type
+    # units: The name of the "value" dimension of the data frame 
+    # date: The name of the "time" dimension of the data frame
+  # Output: 12 seasonal facotrs per type (one for each month) - Normalized
+func_get_season_group_month = function(data, type, units, date)
+{  
+  #Standardize Seasonality: times, level and Units
+  data = data %>%
+    rename_(MONTH_YEAR = date) %>%
+    rename_(TYPE = type) %>%
+    rename_(SALES_UNITS = units)
+
+  # Uniq Levels
+  uniq_level = data %>%
+    distinct(TYPE)
+  Season_Calc_All = NULL
+  
+  # Loop to get the seasonality for each of these levels
+  for (itr in 1:nrow(uniq_level))
+  {
+    # Get the Unique Key
+    uniq_itr_key = uniq_level %>%
+      filter(row_number() == itr)
+    
+    # Filter the data
+    data_filter = data %>%
+      filter(TYPE == uniq_itr_key$TYPE, MONTH_YEAR < max(MONTH_YEAR))
+    # At least 12 points to get the seasonality
+    if (nrow(data_filter) < 12) next
+    # At least 100 units over the past 6 months - get significant results
+    if (sum(tail(data_filter,6)$SALES_UNITS) < 100) next
+    
+    # Get Seasonal Factors
+    data_filter_1 = data_filter %>%
+        group_by(TYPE) %>%
+      # Populate Missing Months
+        complete(MONTH_YEAR = seq.Date(min(MONTH_YEAR), max(MONTH_YEAR), by = "month"),  
+                 fill = list(SALES_UNITS = 0)) %>%
+      # Get Month numeric - Remove 4-4-5 rule
+      mutate(MONTH_NUM = month(MONTH_YEAR)) %>%
+      mutate(WEEK_COUNT = ifelse(MONTH_NUM %in% c(3,6,9,12), 5, 4)) %>%
+      mutate(SALES_UNITS_NORM = SALES_UNITS / WEEK_COUNT * 4 ) %>%
+      # Rolling Centered moving average
+      mutate(SALES_UNITS_ROLL = 
+                 rollapply(SALES_UNITS_NORM, 12, mean, align = "center", partial = TRUE)) %>%
+      # Remove beginning and End - Now, not a lot of history so we allowed partial Roll Apply 
+      filter(complete.cases(.)) %>%
+      # Get Seasonal factors
+      mutate(SALES_UNITS_MEAN = SALES_UNITS_NORM / SALES_UNITS_ROLL)
+    
+    # Average, group and normalize the results
+    Season_Calc = data_filter_1 %>%
+      group_by(TYPE, MONTH_NUM) %>%
+      summarise(SEASON = mean(SALES_UNITS_MEAN)) %>%
+      ungroup() %>%
+      mutate(SEASON = SEASON / sum(SEASON) * 12)
+    
+    Season_Calc_All = rbind(Season_Calc_All, Season_Calc)
+  }
+  return(Season_Calc_All)
+}
+
+```
+
+Main Metrics
+=====================================  
+
+Row{data-height=250}
+-------------------------------------
+
+### Monthly Total
+```{r Monthly Total}
+
+# Get the Current Month
+Current_Month = floor_date(today(), 'month')
+# Sales this Month so Far
+This_Month = PW_Data %>%
+    filter(Fiscal_Month_Start == Current_Month) %>%
+    group_by(Fiscal_Month_Start) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Type = "Current Month")
+
+# Get the previous month
+Previous_Month = Current_Month - months(1)
+# Sales Last Month
+Last_Month = PW_Data %>%
+    filter(Fiscal_Month_Start == Previous_Month) %>%
+    group_by(Fiscal_Month_Start) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Type = "Last Month")
+
+# Get the previous Year Month
+Previous_Year = Current_Month - months(12)
+# Sales last Year Month
+Last_Year_Month = PW_Data %>%
+    filter(Fiscal_Month_Start == Previous_Year) %>%
+    group_by(Fiscal_Month_Start) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Type = "Last Year")
+
+# Month with Highest Sales
+Max_Month = PW_Data %>%
+    group_by(Fiscal_Month_Start) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    filter(Count == max(Count)) %>%
+    mutate(Type = "Max Month")
+
+# Saving the data into one data frame
+Month_Data = rbind(This_Month, Last_Month, Last_Year_Month, Max_Month) %>%
+    mutate(Type = factor(Type, levels = c("Current Month", "Last Year", "Last Month", "Max Month"))) %>%
+    select(Type,  Fiscal_Month_Start, Count)
+
+# DT Function to publish the results
+DT::renderDataTable(datatable(Month_Data,  rownames = FALSE, colnames = NULL,  options  = list(dom = 't')) %>%
+                        formatStyle('Count',
+                                    background = styleColorBar(range(0, max(Month_Data$Count)), 'lightblue'),
+                                    backgroundSize = '98% 88%',
+                                    backgroundRepeat = 'no-repeat',
+                                    backgroundPosition = 'center'))
+```
+
+
+### Weekly Total
+```{r Weekly_Total}
+# Get the Current Week
+Current_Week = floor_date(today(), 'week') + days(1)
+# Sales this Week so Far
+This_Week = PW_Data %>%
+    filter(Fiscal_Week_Start == Current_Week) %>%
+    group_by(Fiscal_Week_Start) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Type = "Current Week")
+
+# Get the previous week
+Previous_Week = Current_Week - weeks(1)
+# Sales Last Week
+Last_Week = PW_Data %>%
+    filter(Fiscal_Week_Start == Previous_Week) %>%
+    group_by(Fiscal_Week_Start) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Type = "Last Week")
+
+# Get the previous Year Month Week
+Current_Week_Number = PW_Calendar %>%
+    filter(Fiscal_Week_Start == Current_Week) %>%
+    head(1) %>%
+    select((Week_Number))
+Previous_Year_Week = PW_Calendar %>%
+    filter(Week_Number == Current_Week_Number$Week_Number) %>%
+    group_by(Fiscal_Week_Start) %>%
+    summarise(Week_Number = mean(Week_Number)) %>%
+    ungroup() %>%
+    arrange(Fiscal_Week_Start) %>%
+    filter(Fiscal_Week_Start < Current_Week) %>%
+    tail(1)
+
+# Sales last Year Month Week
+Previous_Year_Week = Previous_Year_Week$Fiscal_Week_Start
+Last_Year_Week = PW_Data %>%
+    filter(Fiscal_Week_Start == Previous_Year_Week) %>%
+    group_by(Fiscal_Week_Start) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Type = "Last Year")
+
+# Week with Highest Sales
+Max_Week = PW_Data %>%
+    group_by(Fiscal_Week_Start) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    filter(Count == max(Count)) %>%
+    mutate(Type = "Max Week")
+
+# Saving the data into one data frame
+Week_Data = rbind(This_Week, Last_Week, Last_Year_Week, Max_Week) %>%
+    mutate(Type = factor(Type, levels = c("Current Week", "Last Year", "Last Week", "Max Week"))) %>%
+    select(Type, Fiscal_Week_Start, Count)
+
+# Saving the data into one data frame
+DT::renderDataTable(datatable(Week_Data,  rownames = FALSE, colnames = NULL, options  = list(dom = 't')) %>%
+                        formatStyle('Count',
+                                    background = styleColorBar(range(0, max(Week_Data$Count)), 'lightblue'),
+                                    backgroundSize = '98% 88%',
+                                    backgroundRepeat = 'no-repeat',
+                                    backgroundPosition = 'center'))
+```
+
+### Turn - How many weeks to sell 500
+```{r}
+# How many weeks to sell 500 Units - Should be consistenly lower
+PW_Week = PW_Data %>%
+    # Get Weekly Sales
+    group_by(Fiscal_Week_Start) %>%
+    summarize(Count = sum(Count)) %>%
+    ungroup() %>%
+    # Cumulative Sum
+    mutate(CumCount = cumsum(Count)) %>%
+    # Modulo to get every 500 Total
+    mutate(Cum_500 = CumCount %/% 500) %>%
+    # For every 500 units, count how many weeks
+    group_by(Cum_500) %>%
+    summarise(Fiscal_Week_Start = min(Fiscal_Week_Start), Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(End_Period = lead(Fiscal_Week_Start)) %>%
+    mutate(End_Period = if_else(is.na(End_Period), Current_Week, End_Period)) %>%
+    mutate(Cum_500 = factor(Cum_500, levels = sort(Cum_500))) %>%
+    # Show on Going
+    mutate(Cum_500 = if_else(row_number() == n(), "On Going", as.character(Cum_500))) %>%
+    # Convert Days into Weeks
+    mutate(Time_Period = as.numeric(End_Period - Fiscal_Week_Start)/7) 
+
+
+renderHighchart({
+    hchart(PW_Week, "bar", hcaes(x = Cum_500, y = Time_Period, names = as.character(Count)), pointWidth = 10) %>%
+    hc_add_theme(hc_theme_economist())
+    })
+
+
+```
+
+
+Row{.tabset}
+-------------------------------------
+### Top 12 Lines
+```{r}
+# Display the top 12 Lines and thei Weekly Run Rate
+PW_Sales_All = PW_Data %>%
+    # Get the Total Count per line
+    group_by(Collection, Line) %>%
+    summarize(Count = sum(Count)) %>%
+    ungroup() %>%
+    # Left join with the Fist week the Line came out
+    # Collection A came out in Feb 2016, B in Summer 2016 and C in Spring 2017
+    left_join(PW_First_Week, by = c("Collection", "Line")) %>%
+    mutate(Current_Week = Current_Week ) %>%
+    mutate(Number_Weeks = as.numeric((Current_Week - First_Week)/7)) %>%
+    mutate(Weekly_RR = round(Count / Number_Weeks, 2)) %>%
+    arrange(desc(Weekly_RR)) %>%
+    select(Collection, Line, Count, Number_Weeks, Weekly_RR)
+
+renderHighchart({
+    hchart(head(PW_Sales_All, 12), "bar", hcaes(x = Line, y = Weekly_RR, group = Collection), pointWidth = 10) %>%
+    hc_add_theme(hc_theme_economist())
+    })
+```
+
+### TreeMap
+```{r}
+# See the relative size of each collection and their lines
+# Viridis is supposed to provide color combination easy to read
+tm <- treemap(PW_Sales_All, index = c("Collection", "Line"),
+              vSize = "Weekly_RR", vColor = "Weekly_RR",
+              type = "value", palette = rev(viridis(6)))
+
+renderHighchart({
+     hctreemap(tm, allowDrillToNode = TRUE, layoutAlgorithm = "squarified") %>% 
+  hc_add_theme(hc_theme_economist())
+    
+})
+```
+
+### Line_Matrix
+```{r}
+# The idea for this view is to look at the Customers
+# We want to make sure we cover all of the markets
+  # Male and Female
+  # Solar and Optical
+
+# Let us get the Split from 0 to 1 for Optical / Solar
+# 0 being 100% Optical
+# 1 being 100% Solar
+PW_Eyewear = PW_Data %>%
+    # get the split for all lines
+    filter(Eyewear %in% c("Optical", "Solar")) %>%
+    group_by(Collection, Line, Eyewear) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    # Spead the data => Easier to compute the ratio
+    spread(Eyewear, Count) %>%
+    mutate(Optical = ifelse(is.na(Optical), 0, Optical)) %>%
+    mutate(Solar = ifelse(is.na(Solar), 0, Solar)) %>%
+    mutate(Total = Optical + Solar) %>%
+    mutate(Solar_Perc = round(Solar/Total, 2))
+
+# Let us get the Split from 0 to 1 for Male / Female
+# 0 being 100% Male
+# 1 being 100% Female
+PW_Gender = PW_Data %>%
+    # get the split for all lines
+    filter(Eyewear %in% c("Optical", "Solar")) %>%
+    group_by(Collection, Line, Gender) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    # Spead the data => Easier to compute the ratio
+    spread(Gender, Count) %>%
+    mutate(M = ifelse(is.na(M), 0, M)) %>%
+    mutate(F = ifelse(is.na(F), 0, F)) %>%
+    mutate(Total = M + F) %>%
+    mutate(Males_Perc = round(M/Total, 2))
+
+# Join the data and Multiply by 100
+PW_Eyewear_Gender = PW_Eyewear %>%
+    left_join(PW_Gender, by = c("Collection", "Line", "Total")) %>%
+    mutate(Males_Perc = Males_Perc * 100) %>%
+    mutate(Solar_Perc = Solar_Perc * 100)
+
+renderHighchart({
+highchart() %>% 
+    hc_add_series_scatter(PW_Eyewear_Gender$Males_Perc, PW_Eyewear_Gender$Solar_Perc,
+                       PW_Eyewear_Gender$Total, PW_Eyewear_Gender$Collection,
+                       PW_Eyewear_Gender$Line,
+                       dataLabels = list(
+                         enabled = TRUE,
+                         format = "{point.label}"
+                       )) %>% 
+    hc_chart(zoomType = "xy") %>% 
+    hc_tooltip(useHTML = TRUE,
+             headerFormat = "<table>",
+             pointFormat = paste("<tr><th colspan=\"1\"><b>{point.label}</b></th></tr>",
+                                 "<tr><th>Male_Perc</th><td>{point.x} %</td></tr>",
+                                 "<tr><th>Solar_Perc</th><td>{point.y} %</td></tr>",
+                                 "<tr><th>Units_Sold</th><td>{point.z} </td></tr>",
+                                 "<tr><th>Collection</th><td>{point.valuecolor}</td></tr>"),
+             footerFormat = "</table>") %>%
+    hc_xAxis(title = list(text = "Percentage of Male Customers"),
+                labels = list(format = "{value}%"), min = 0, max = 100) %>% 
+    hc_yAxis( title = list(text = "Percentage of Solar"),
+               labels = list(format = "{value}%"),min = 0, max = 100) %>% 
+    hc_add_theme(hc_theme_economist())
+})
+```
+
+
+All Lines
+=====================================  
+
+Row {data-height=600}
+-------------------------------------
+    
+### Forecast
+
+```{r}
+# Let us look at other information for all lines aggregated
+# We are going to use Shiny and the reactive concept.
+  # Shiy is not techinally necessary but it is easier as the cope is identical when splitting by line
+Lines_Sales_ts_fit_All_Reac = reactive({
+
+# Get the sales by Month
+PW_Sales_Month_Line_All = PW_Sales_Month_Line %>%
+    filter(Fiscal_Month_Start < max(Fiscal_Month_Start)) %>%
+    group_by(Fiscal_Month_Start) %>%
+    summarize(Count = sum(Count)) %>%
+    ungroup()
+
+
+Start_Date = min(PW_Sales_Month_Line_All$Fiscal_Month_Start)
+
+# Make sure the data is complete - no missing month
+PW_Sales_Month_Full = PW_Sales_Month_Line_All %>%
+        complete(Fiscal_Month_Start = seq.Date(Start_Date, Max_Date, by = "month"),  
+                 fill = list(Count = 0)) %>%
+    arrange(Fiscal_Month_Start)
+
+# Create Monthly time Series
+# Python definitely dominates R for time-series
+Lines_Sales_ts <- ts(PW_Sales_Month_Line_All$Count, start = c(year(Start_Date), month(Start_Date)), frequency = 12)
+# Use the forecast package Forecast - Fit an ZMZ Model for an ETS decomposition
+  # E => Use 'Z', we let R pick between Additive or multiplicative Error
+  # T => Use 'A', we tell R to pick an Additive trend
+    # I prefer additive trend when business is expected to going up
+    # I prefer multiplicative trend when business is expected to going down
+  # S => Use 'Z', we let R pick between Additive or multiplicative seasonality
+Lines_Sales_ts_fit = ets(Lines_Sales_ts, model = "ZAZ")
+Lines_Sales_ts_fit
+})
+
+# The Model does not have enough history to come with Robust Seasonal factors
+
+renderHighchart({
+    Lines_Sales_ts_fit_All_Reac() %>%
+        # Lines_Sales_ts_fit %>%
+        forecast(level = 90, h = 6) %>%
+        hchart() %>%
+        hc_tooltip(valueDecimals = 2) %>% 
+        hc_add_theme(hc_theme_economist())
+    })
+```
+
+Row {data-height=400}
+-------------------------------------
+
+### Eyewear Split
+
+```{r}
+PW_Data_Eyewear_Reac =  reactive({
+  #Business split between Eyewear type
+  # Optical sales are more profitable
+      # Optical sales are more stable and less random
+  # Solar sales are fast and easy
+      # Depends a lot of season and weather
+PW_Data_Eyewear_All = PW_Data_Eyewear %>%
+    group_by(Eyewear) %>%
+    summarize(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Perc = Count / sum(Count)) %>%
+    mutate(Perc = 100 * Perc)
+    })
+
+renderHighchart({
+PW_Data_Eyewear_Filter_Reac() %>%
+    # PW_Data_Eyewear_All %>%
+    hchart("column", hcaes(x = Eyewear, y = Perc), name = "Total") %>%
+    hc_add_theme(hc_theme_economist())
+    })
+```
+
+
+### Collection Split
+```{r}
+
+# Let us look at the split by Collection
+PW_Data_Collection_Reac =  reactive({
+PW_Data_Collection_All = PW_Data_Color %>%
+    group_by(Collection) %>%
+    summarize(Count = sum(Count)) %>%
+    ungroup()
+    })
+
+renderHighchart({
+PW_Data_Collection_Reac() %>%
+    # PW_Data_Collection_All %>%
+    hchart("column", hcaes(x = Collection, y = Count), name = "Total") %>%
+    hc_add_theme(hc_theme_economist())
+    })
+```
+
+
+### Customer Type
+```{r}
+
+# We want to get more information about the customers.
+# Who buys the product?
+    # Make sure the target population buys the product
+    # Knowing the customers would help to understand their needs, and target them
+PW_Data_Age_Reac = reactive({
+  # Get the split by Age
+PW_Data_Age_All = PW_Data_Age %>%
+    group_by(Age) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Perc = round(Count / sum(Count),2)) %>%
+    mutate(Perc = 100 * Perc)
+    })
+
+PW_Data_Gender_Reac = reactive({
+    # Get the split by gender
+PW_Data_Gender_All = PW_Data_Gender %>%
+    group_by(Gender) %>%
+    summarise(Count = sum(Count)) %>%
+    ungroup() %>%
+    mutate(Perc = round(Count / sum(Count),2)) %>%
+    mutate(Perc = 100 * Perc)
+})
+
+renderHighchart({highchart() %>% 
+    #Data
+    hc_add_series(PW_Data_Age_Reac(), "column", hcaes(x = Age, y = Perc), name = "Age") %>%
+    hc_add_series(PW_Data_Gender_Reac(), "pie", hcaes(name = Gender, y = Perc), name = "Gender") %>%
+    #hc_add_series(PW_Data_Age_All, "column", hcaes(x = Age, y = Perc), name = "Age") %>%
+    #hc_add_series(PW_Data_Gender_All, "pie", hcaes(name = Gender, y = Perc), name = "Gender") %>%
+    #Options
+    hc_plotOptions(
+        series = list(showInLegend = FALSE),
+        column = list(colorByPoint = TRUE),
+        pie = list(colorByPoint = TRUE, center = c('70%', '10%'),size = 120, dataLabels = list(enabled = FALSE))
+        ) %>%
+    hc_yAxis(
+        title = list(text = "Split by Age"),
+        labels = list(format = "{value}%")) %>%
+    hc_xAxis(categories = PW_Data_Age_Reac()$Age) %>%
+    #hc_xAxis(categories = PW_Data_Age_All$Age) %>%
+    hc_add_theme(hc_theme_economist())
+})
+```
+
+
+Specific Line
+=====================================  
+
+Inputs {.sidebar}
+-------------------------------------
+
+```{r}
+# Let us look some information for every line
+# Logic is very close than the previous Page
+ selectInput("Line", label = h3("Select Line"), 
+    choices = sort(unique(PW_Data$Line)), 
+    selected = "ModelA3")
+```
+ 
+Row {data-height=600}
+-------------------------------------
+    
+### Forecast
+
+```{r}
+# Forecast by Line
+# Here we use the reactivity concept to filter for a specific line
+Lines_Sales_ts_fit_Filter_Reac = reactive({
+    
+    PW_Sales_Month_Line_Filter = PW_Sales_Month_Line %>%
+        filter(Line == input$Line) 
+    
+    Start_Date = min(PW_Sales_Month_Line_Filter$Fiscal_Month_Start)
+    
+    PW_Sales_Month_Full = PW_Sales_Month_Line_Filter %>%
+            complete(Fiscal_Month_Start = seq.Date(Start_Date, Max_Date, by = "month"),  
+                     fill = list(Count = 0)) %>%
+        arrange(Fiscal_Month_Start)
+    
+    Lines_Sales_ts <- ts(PW_Sales_Month_Line_Filter$Count, start = c(year(Start_Date), month(Start_Date)), frequency = 12)
+    Lines_Sales_ts_fit = ets(Lines_Sales_ts)
+})
+
+renderHighchart({
+    Lines_Sales_ts_fit_Filter_Reac() %>%
+        # Lines_Sales_ts_fit %>%
+        forecast(level = 90, h = 6) %>%
+        hchart() %>%
+        hc_tooltip(valueDecimals = 2) %>% 
+        hc_add_theme(hc_theme_economist())
+    })
+```
+
+Row {data-height=400}
+-------------------------------------
+
+### Eyewear Split
+
+```{r}
+PW_Data_Eyewear_Filter_Reac =  reactive({
+    PW_Data_Eyewear_Filter = PW_Data_Eyewear %>%
+        filter(Line == input$Line) %>%
+        mutate(Perc = round(Count / sum(Count),2)) %>%
+        mutate(Perc = 100 * Perc)
+    
+    })
+
+renderHighchart({
+    PW_Data_Eyewear_Filter_Reac() %>%
+        #PW_Data_Eyewear_Filter %>%
+        hchart("column", hcaes(x = Eyewear, y = Perc), name = "Total") %>%
+        hc_add_theme(hc_theme_economist())
+    })
+```
+
+
+### Color Split
+```{r}
+PW_Data_Color_Filter_Reac =  reactive({
+    PW_Data_Color_Filter = PW_Data_Color %>%
+        filter(Line == input$Line) %>%
+        mutate(Perc = round(Count / sum(Count),2)) %>%
+        mutate(Perc = 100 * Perc)
+    })
+
+renderHighchart({
+    PW_Data_Color_Filter_Reac() %>%
+        #PW_Data_Color_Filter %>%
+        hchart("column", hcaes(x = Color, y = Perc), name = "Total") %>%
+        hc_add_theme(hc_theme_economist())
+    })
+```
+
+
+### Customer Type
+```{r}
+
+PW_Data_Age_Filter_Reac = reactive({
+PW_Data_Age_Filter = PW_Data_Age %>%
+    filter(Line == input$Line) %>%
+    mutate(Perc = round(Count / sum(Count),2)) %>%
+    mutate(Perc = 100 * Perc)
+    })
+
+PW_Data_Gender_Filter_Reac = reactive({
+PW_Data_Gender_Filter = PW_Data_Gender %>%
+    filter(Line == input$Line) %>%
+    mutate(Perc = round(Count / sum(Count),2)) %>%
+    mutate(Perc = 100 * Perc)
+})
+
+renderHighchart({highchart() %>% 
+    #Data
+    hc_add_series(PW_Data_Age_Filter_Reac(), "column", hcaes(x = Age, y = Perc), name = "Age") %>%
+    hc_add_series(PW_Data_Gender_Filter_Reac(), "pie", hcaes(name = Gender, y = Perc), name = "Gender") %>%
+    #hc_add_series(PW_Data_Age_Filter, "column", hcaes(x = Age, y = Perc), name = "Age") %>%
+    #hc_add_series(PW_Data_Gender_Filter, "pie", hcaes(name = Gender, y = Perc), name = "Gender") %>%
+    #Options
+    hc_plotOptions(
+        series = list(showInLegend = FALSE),
+        column = list(colorByPoint = TRUE),
+        pie = list(colorByPoint = TRUE, center = c('70%', '10%'),size = 120, dataLabels = list(enabled = FALSE))
+        ) %>%
+    hc_yAxis(
+        title = list(text = "Split by Age"),
+        labels = list(format = "{value}%")) %>%
+    hc_xAxis(categories =PW_Data_Age_Filter_Reac()$Age) %>%
+    #hc_xAxis(categories = PW_Data_Age_Filter$Age) %>%
+    hc_add_theme(hc_theme_economist())
+})
+```
+
+
+
+Other Calcs
+=====================================  
+
+### Monthly Forecast
+```{r}
+
+# As we did not have enough history, we decided to build an in house model to get the forecast
+# We are going to use Run Rate + Seasonality + Trend
+
+#Seasonality call for the Eyewear
+# 12 coefficient * # of Eyewear type
+    # If volume too low, no seasonality
+Season_Eyewear = func_get_season_group_month(PW_Sales_Month_Eyewear, "Eyewear", "Count", "Fiscal_Month_Start") %>%
+    rename(Eyewear = TYPE)
+# We are not going to forecast every model, but we are going to go at Eyewaer Level
+# For the next 6 months, let us compute the forecast
+
+Eyewear_Type = sort(unique(PW_Sales_Month_Eyewear$Eyewear))
+
+Forecast_Eyewear_All = NULL
+
+for (i in Eyewear_Type)
+{
+  # Filter data for each eyewear
+    Eyewear_Data = PW_Sales_Month_Eyewear %>%
+        filter(Eyewear == i) %>%
+        arrange(Fiscal_Month_Start) %>%
+        filter(Fiscal_Month_Start < max(Fiscal_Month_Start)) %>%
+        mutate(MONTH_NUM = month(Fiscal_Month_Start)) %>%
+        # 4-4-5Rule
+        mutate(Norm_Count = ifelse(MONTH_NUM %in% c(3,6,9,12), Count / 5 * 4, Count)) %>%
+        # join the seasonality
+        left_join(Season_Eyewear, by = c("Eyewear", "MONTH_NUM"))
+    
+    # If no seasonality -> Just use the Run Rate
+    if (is.na(Eyewear_Data$SEASON[1]))
+    {
+    Forecast_Eyewear = data_frame(Eyewear = i, Month_Count = seq(1,6), 
+                                  Forecast = round(mean(tail(Eyewear_Data$Norm_Count,12)),0)) %>%
+        mutate(Fiscal_Month_Start = seq.Date(max(Eyewear_Data$Fiscal_Month_Start) + months(1),
+                                             max(Eyewear_Data$Fiscal_Month_Start) + months(6), "months")) %>%
+        mutate(MONTH_NUM = month(Fiscal_Month_Start)) %>%
+        dplyr::select(Eyewear, Fiscal_Month_Start, Forecast)
+    } else {
+    # Get the run Rate
+    Eyewear_Data = Eyewear_Data %>%
+        mutate(Norm_Count_Des = Norm_Count / SEASON) %>%
+      # Moving average last 3 months Normalizes and Deseasonalized Sales Data 
+        mutate(Norm_Count_Des_Roll = 
+                 rollapply(Norm_Count_Des, 3, mean, align = "right", fill = NA)) %>%
+        mutate(Month_Count = seq(1, nrow(.))) %>%
+        tail(6)
+    # Average of last 3 months of the Running Average
+    Run_Rate = mean(tail(Eyewear_Data$Norm_Count_Des_Roll),3)
+    # Trend - we fit a linear regression and we use the coefficient
+    Trend = lm(Eyewear_Data$Norm_Count_Des_Roll ~ Eyewear_Data$Month_Count)$coefficients[2]
+    
+    #Cleaning the data - Forecast for next 6 months
+    Forecast_Eyewear = data_frame(Eyewear = i, Month_Count = seq(1,6), Run_Rate = Run_Rate, Trend = Trend) %>%
+        mutate(Fiscal_Month_Start = seq.Date(max(Eyewear_Data$Fiscal_Month_Start) + months(1),
+                                             max(Eyewear_Data$Fiscal_Month_Start) + months(6), "months")) %>%
+        mutate(MONTH_NUM = month(Fiscal_Month_Start)) %>%
+        # Join Seasonality
+        left_join(Season_Eyewear, by = c("Eyewear", "MONTH_NUM")) %>%
+        # Forecast = (Run Rate + Trend * Month Count) * Seasonality
+        # Addditive trend, multiplicative seasonality
+        mutate(Forecast = (Run_Rate + Month_Count * Trend) * SEASON) %>%
+        dplyr::select(Eyewear, Fiscal_Month_Start, Forecast)
+        }
+
+    Forecast_Eyewear_All = rbind(Forecast_Eyewear_All, Forecast_Eyewear)
+}
+
+# 4-4-5 Rule Back
+Forecast_Eyewear_All_Long = Forecast_Eyewear_All %>%
+    mutate(MONTH_NUM = month(Fiscal_Month_Start)) %>%
+    mutate(Forecast = round(ifelse(MONTH_NUM %in% c(3,6,9,12), Forecast / 4 * 5, Forecast),0)) %>%
+    # Keep meaningful columns for Visualisation
+    dplyr::select(Eyewear, Fiscal_Month_Start, Forecast) %>%
+    mutate(Fiscal_Month_Start =  as.yearmon(Fiscal_Month_Start)) %>%
+    spread(Fiscal_Month_Start, Forecast)
+
+# Add a line for total for each month
+Forecast_Eyewear_All_Long_Sum = Forecast_Eyewear_All_Long %>%
+    mutate(Eyewear = "Total") %>%
+    group_by(Eyewear) %>%
+    summarise_each(funs(sum)) %>%
+    ungroup()
+
+Forecast_Eyewear_Final = rbind(Forecast_Eyewear_All_Long, Forecast_Eyewear_All_Long_Sum)
+
+DT::renderDataTable(datatable(Forecast_Eyewear_Final,  rownames = FALSE, options(dom = 't')) %>%
+                        formatStyle('Eyewear',
+                        target = 'row',
+                        backgroundColor = styleEqual("Total", c('lightblue'))))
+```
