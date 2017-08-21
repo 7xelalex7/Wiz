@@ -53,10 +53,6 @@ lct <- Sys.getlocale("LC_TIME"); Sys.setlocale("LC_TIME", "C")
 #    mutate(Fiscal_Month_Start = as.Date(Fiscal_Month_Start, format = "%m/%d/%Y")) %>%
 #    mutate(Fiscal_Week_Start = as.Date(Fiscal_Week_Start, format = "%m/%d/%Y") )
 
-# set working directory
-#Update with your Path
-#setwd('Your Path')
-setwd('C:/Users/Alexandre/Documents/Folder_Git_Alexandre/Wiz/Sales_Dash')
 
 # Importing local CSV File
 Sales_Calendar = read.csv('Date_Sales.csv', stringsAsFactors = FALSE) %>%

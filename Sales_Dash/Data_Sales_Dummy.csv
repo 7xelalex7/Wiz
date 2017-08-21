@@ -35,6 +35,7 @@ Date,Meteo,Temperature,Collection,Line,Color,Eyewear,Gender,Age,Quantity,Salesma
 2/12/2016,No Data,No Data,A,ModelA7,Black,Solar,M,15-30,1,Boss
 2/12/2016,No Data,No Data,A,ModelA6,Transparent,Optical,F,15-30,1,Boss
 2/12/2016,No Data,No Data,A,ModelA11,Gray,Optical,M,30-45,1,Boss
+2/12/2016,No Data,No Data,A,ModelA5,Blue,Optical,M,45-60,1,Boss
 2/13/2016,No Data,No Data,A,ModelA7,Black,Optical,M,15-30,1,Boss
 2/13/2016,No Data,No Data,A,ModelA3,Gray,Optical,M,30-45,1,Boss
 2/13/2016,No Data,No Data,A,ModelA8,Shiny,Optical,M,30-45,1,Boss
@@ -43,7 +44,6 @@ Date,Meteo,Temperature,Collection,Line,Color,Eyewear,Gender,Age,Quantity,Salesma
 2/13/2016,No Data,No Data,A,ModelA6,Transparent,Solar,F,45-60,1,Boss
 2/13/2016,No Data,No Data,A,ModelA8,Black,Solar,M,15-30,1,Boss
 2/13/2016,No Data,No Data,A,ModelA13,Yellow,Solar,F,45-60,1,Boss
-2/12/2016,No Data,No Data,A,ModelA5,Blue,Optical,M,45-60,1,Boss
 2/14/2016,No Data,No Data,A,ModelA14,Blue,Optical,F,15-30,1,Boss
 2/14/2016,No Data,No Data,A,ModelA10,Purple,Solar,F,45-60,1,Boss
 2/14/2016,No Data,No Data,A,ModelA3,Silver,Optical,M,15-30,1,Boss
@@ -83,8 +83,8 @@ Date,Meteo,Temperature,Collection,Line,Color,Eyewear,Gender,Age,Quantity,Salesma
 2/22/2016,No Data,No Data,A,ModelA16,Shiny,Optical,M,60 +,1,Boss
 2/22/2016,No Data,No Data,A,ModelA10,Yellow,Solar,F,15-30,1,Boss
 2/22/2016,No Data,No Data,A,ModelA8,Black,Solar,M,30-45,1,Boss
-2/23/2016,No Data,No Data,A,ModelA20,Gray,Solar,F,60 +,1,Boss
 2/22/2016,No Data,No Data,A,ModelA1,Brown,Solar,F,30-45,1,Boss
+2/23/2016,No Data,No Data,A,ModelA20,Gray,Solar,F,60 +,1,Boss
 2/23/2016,No Data,No Data,A,ModelA8,Black,Solar,F,45-60,1,Boss
 2/23/2016,No Data,No Data,A,ModelA21,Blue,Optical,F,45-60,1,Boss
 2/23/2016,No Data,No Data,A,ModelA1,Pink,Solar,F,15-30,1,Boss
@@ -3802,10 +3802,12 @@ Date,Meteo,Temperature,Collection,Line,Color,Eyewear,Gender,Age,Quantity,Salesma
 5/13/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,15-30,1,Boss
 5/13/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
 5/13/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+5/13/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
 5/14/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
 5/14/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
 5/14/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,60 +,1,Employe3
 5/14/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,30-45,1,Employe4
+5/14/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,F,30-45,1,Employe3
 5/15/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
 5/15/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,30-45,1,Employe4
 5/15/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
@@ -3817,6 +3819,12 @@ Date,Meteo,Temperature,Collection,Line,Color,Eyewear,Gender,Age,Quantity,Salesma
 5/15/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,30-45,1,Employe4
 5/15/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
 5/15/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+5/15/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,30-45,1,Boss
+5/15/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,45-60,1,Boss
+5/15/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,15-30,1,Employe3
+5/15/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,60 +,1,Boss
+5/15/2017,Sunny,Moderate,C,ModelC1,Yellow,Optical,F,60 +,1,Employe4
+5/15/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
 5/16/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,60 +,1,Employe4
 5/16/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
 5/16/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,45-60,1,Boss
@@ -3828,6 +3836,11 @@ Date,Meteo,Temperature,Collection,Line,Color,Eyewear,Gender,Age,Quantity,Salesma
 5/16/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
 5/16/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,15-30,1,Employe4
 5/16/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+5/16/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,15-30,1,Employe4
+5/16/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+5/16/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+5/16/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,F,30-45,1,Employe3
+5/16/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
 5/17/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
 5/17/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,45-60,1,Employe5
 5/17/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
@@ -3837,6 +3850,18 @@ Date,Meteo,Temperature,Collection,Line,Color,Eyewear,Gender,Age,Quantity,Salesma
 5/17/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,30-45,1,Employe4
 5/17/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
 5/17/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,15-30,1,Employe4
+5/17/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,45-60,1,Employe4
+5/17/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,F,15-30,1,Employe3
+5/17/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,30-45,1,Employe5
+5/17/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,45-60,1,Boss
+5/17/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,15-30,1,Employe3
+5/17/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,15-30,1,Employe4
+5/17/2017,Sunny,Moderate,A,ModelA6,Silver,Optical,M,15-30,1,Employe4
+5/17/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,15-30,1,Employe4
+5/17/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,30-45,1,Employe4
+5/17/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,15-30,1,Boss
+5/17/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,60 +,1,Boss
+5/17/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
 5/18/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,15-30,1,Employe3
 5/18/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,30-45,1,Employe5
 5/18/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,15-30,1,Employe3
@@ -3849,6 +3874,915 @@ Date,Meteo,Temperature,Collection,Line,Color,Eyewear,Gender,Age,Quantity,Salesma
 5/18/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Boss
 5/18/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
 5/18/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,15-30,1,Boss
+5/18/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+5/18/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
+5/18/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,15-30,1,Employe4
+5/18/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,45-60,1,Boss
+5/18/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,15-30,1,Employe4
+5/18/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+5/18/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,15-30,1,Employe4
+5/18/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,45-60,1,Employe3
+5/18/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,45-60,1,Employe4
+5/18/2017,Cloudy,Moderate,A,ModelA6,Transparent,Optical,F,30-45,1,Boss
+5/18/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+5/18/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+5/18/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,15-30,1,Boss
+5/18/2017,Sunny,Moderate,A,ModelA23,Blue,Solar_Opt,M,60 +,1,Employe3
 5/19/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
 5/19/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,45-60,1,Boss
+5/19/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,30-45,1,Employe3
+5/19/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,15-30,1,Employe5
+5/19/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,30-45,1,Employe4
+5/19/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,45-60,1,Employe4
+5/19/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+5/19/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,15-30,1,Employe4
+5/19/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,00-15,1,Employe4
+5/19/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,15-30,1,Employe4
+5/19/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
 5/19/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+5/19/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+5/19/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,60 +,1,Employe3
+5/20/2017,Sunny,Moderate,A,ModelA23,Blue,Solar_Opt,M,30-45,1,Employe3
+5/20/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,M,15-30,1,Boss
+5/20/2017,Sunny,Moderate,A,ModelA6,Silver,Optical,M,15-30,1,Employe4
+5/20/2017,Sunny,Moderate,A,ModelA6,Transparent,Solar,M,30-45,1,Employe4
+5/20/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+5/20/2017,Sunny,Moderate,C,ModelC1,Yellow,Optical,F,45-60,1,Employe4
+5/20/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,30-45,1,Employe4
+5/20/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,30-45,1,Employe4
+5/20/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+5/20/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,F,15-30,1,Employe3
+5/20/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+5/20/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,15-30,1,Boss
+5/20/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,45-60,1,Employe4
+5/20/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,45-60,1,Employe4
+5/20/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,30-45,1,Employe4
+5/20/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,30-45,1,Employe4
+5/20/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
+5/20/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+5/20/2017,Sunny,Moderate,A,ModelA6,Silver,Optical,M,15-30,1,Employe4
+5/20/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+5/22/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,30-45,1,Boss
+5/22/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,15-30,1,Boss
+5/22/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,45-60,1,Employe4
+5/22/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,30-45,1,Boss
+5/22/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,45-60,1,Boss
+5/22/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+5/22/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,45-60,1,Employe4
+5/22/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+5/22/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,15-30,1,Employe3
+5/23/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,15-30,1,Employe4
+5/23/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,30-45,1,Employe4
+5/23/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,15-30,1,Employe5
+5/23/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,30-45,1,Boss
+5/23/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,45-60,1,Employe5
+5/23/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+5/23/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+5/23/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+5/23/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,30-45,1,Employe4
+5/23/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,30-45,1,Employe4
+5/24/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,45-60,1,Employe5
+5/24/2017,Cloudy,Moderate,B,ModelB3,Yellow,Optical,M,15-30,1,Employe3
+5/24/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,30-45,1,Boss
+5/24/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,45-60,1,Employe5
+5/24/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
+5/24/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,45-60,1,Boss
+5/24/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,60 +,1,Boss
+5/24/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+5/24/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+5/25/2017,Cloudy,Moderate,C,ModelC2,Gold,Solar,M,30-45,1,Boss
+5/25/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,45-60,1,Employe4
+5/25/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+5/25/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,15-30,1,Employe4
+5/25/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,15-30,1,Employe5
+5/25/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+5/25/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,30-45,1,Employe3
+5/25/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,45-60,1,Employe4
+5/25/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
+5/25/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,45-60,1,Employe4
+5/25/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,M,15-30,1,Boss
+5/25/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,15-30,1,Employe4
+5/25/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+5/25/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+5/25/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,45-60,1,Boss
+5/25/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,15-30,1,Employe4
+5/26/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,15-30,1,Employe4
+5/26/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+5/26/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,30-45,1,Employe3
+5/26/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+5/26/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,45-60,1,Employe4
+5/26/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,45-60,1,Employe4
+5/26/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+5/26/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,45-60,1,Employe5
+5/26/2017,Sunny,Moderate,A,ModelA6,Silver,Optical,M,15-30,1,Employe4
+5/26/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,15-30,1,Boss
+5/26/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,15-30,1,Employe5
+5/26/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,60 +,1,Employe4
+5/26/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,30-45,1,Employe4
+5/26/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+5/26/2017,Cloudy,Moderate,B,ModelB3,Yellow,Optical,M,30-45,1,Employe3
+5/26/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+5/27/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,30-45,1,Boss
+5/27/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+5/27/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+5/27/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,30-45,1,Employe3
+5/27/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,30-45,1,Employe3
+5/27/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,30-45,1,Employe4
+5/27/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,60 +,1,Employe4
+5/27/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,30-45,1,Employe4
+5/28/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,45-60,1,Boss
+5/28/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,60 +,1,Employe3
+5/28/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Boss
+5/28/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,45-60,1,Employe4
+5/28/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,15-30,1,Employe4
+5/28/2017,Cloudy,Moderate,B,ModelB3,Gold,Optical,F,15-30,1,Boss
+5/28/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,15-30,1,Employe4
+5/28/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,30-45,1,Employe4
+5/29/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe3
+5/29/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+5/29/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,30-45,1,Employe4
+5/29/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,45-60,1,Employe3
+5/29/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,15-30,1,Employe4
+5/29/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,45-60,1,Employe4
+5/29/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,15-30,1,Employe4
+5/29/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,30-45,1,Employe3
+5/29/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+5/29/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,30-45,1,Employe4
+5/29/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,15-30,1,Employe4
+5/29/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+5/29/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,60 +,1,Employe3
+5/29/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+5/29/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+5/29/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,60 +,1,Boss
+5/29/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,45-60,1,Employe5
+5/30/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+5/30/2017,Cloudy,Moderate,C,ModelC2,Gold,Solar,M,15-30,1,Boss
+5/30/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,45-60,1,Employe3
+5/30/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,45-60,1,Employe4
+5/30/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+5/30/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,15-30,1,Boss
+5/30/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+5/30/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+5/30/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,30-45,1,Employe4
+5/31/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+5/31/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,30-45,1,Employe4
+5/31/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,15-30,1,Employe4
+5/31/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,60 +,1,Employe4
+5/31/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,15-30,1,Employe4
+5/31/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,30-45,1,Employe4
+5/31/2017,Sunny,Moderate,A,ModelA6,Transparent,Solar,M,30-45,1,Employe4
+5/31/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+5/31/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+6/1/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,15-30,1,Employe4
+6/1/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,45-60,1,Employe4
+6/1/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,30-45,1,Employe4
+6/1/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,45-60,1,Employe3
+6/1/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+6/1/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,30-45,1,Employe3
+6/1/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,60 +,1,Employe4
+6/2/2017,Cloudy,Moderate,B,ModelB3,Gold,Optical,F,45-60,1,Boss
+6/2/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,30-45,1,Employe4
+6/2/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,15-30,1,Employe4
+6/2/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,30-45,1,Employe3
+6/2/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+6/2/2017,Cloudy,Moderate,B,ModelB3,Yellow,Optical,M,45-60,1,Employe3
+6/2/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+6/2/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+6/3/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,30-45,1,Employe3
+6/3/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,15-30,1,Employe4
+6/3/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,45-60,1,Employe4
+6/3/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+6/3/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+6/3/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,15-30,1,Boss
+6/3/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+6/3/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,30-45,1,Employe4
+6/4/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,45-60,1,Employe4
+6/4/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,45-60,1,Boss
+6/4/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,45-60,1,Employe3
+6/4/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,15-30,1,Boss
+6/4/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,30-45,1,Employe4
+6/4/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+6/5/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,60 +,1,Boss
+6/5/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,15-30,1,Employe4
+6/5/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,45-60,1,Employe4
+6/5/2017,Sunny,Moderate,A,ModelA6,Transparent,Solar,M,30-45,1,Employe4
+6/5/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+6/5/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+6/6/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+6/6/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,45-60,1,Employe5
+6/6/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,M,15-30,1,Boss
+6/6/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,30-45,1,Employe4
+6/6/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,15-30,1,Employe4
+6/6/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,60 +,1,Employe3
+6/7/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,45-60,1,Employe4
+6/7/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,15-30,1,Boss
+6/7/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+6/7/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,30-45,1,Employe4
+6/7/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,30-45,1,Employe3
+6/7/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,30-45,1,Employe4
+6/7/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,30-45,1,Employe3
+6/7/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,15-30,1,Boss
+6/7/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+6/7/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+6/8/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,45-60,1,Employe4
+6/8/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,15-30,1,Employe5
+6/8/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,45-60,1,Employe3
+6/8/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,30-45,1,Boss
+6/8/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+6/8/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,30-45,1,Employe4
+6/8/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,45-60,1,Boss
+6/8/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,15-30,1,Employe4
+6/8/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,15-30,1,Boss
+6/8/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,60 +,1,Employe4
+6/8/2017,Cloudy,Moderate,A,ModelA6,Transparent,Optical,F,30-45,1,Boss
+6/8/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+6/8/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,15-30,1,Employe4
+6/8/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,45-60,1,Employe4
+6/8/2017,Cloudy,Moderate,B,ModelB3,Gold,Optical,F,15-30,1,Boss
+6/9/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,30-45,1,Employe4
+6/9/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+6/10/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,30-45,1,Employe4
+6/10/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,15-30,1,Boss
+6/10/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,30-45,1,Employe4
+6/10/2017,Sunny,Moderate,C,ModelC1,Yellow,Optical,F,30-45,1,Employe4
+6/10/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+6/10/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+6/10/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,15-30,1,Employe3
+6/11/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+6/11/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,60 +,1,Employe4
+6/11/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,15-30,1,Boss
+6/11/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+6/11/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
+6/11/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+6/11/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,15-30,1,Boss
+6/11/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+6/11/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+6/11/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
+6/11/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+6/11/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,30-45,1,Employe4
+6/12/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,30-45,1,Boss
+6/12/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,60 +,1,Employe4
+6/12/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,45-60,1,Employe3
+6/12/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,30-45,1,Employe4
+6/12/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+6/12/2017,Sunny,Moderate,A,ModelA6,Transparent,Solar,M,45-60,1,Employe4
+6/12/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+6/12/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,30-45,1,Employe4
+6/13/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,45-60,1,Employe3
+6/13/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
+6/13/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+6/13/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,45-60,1,Employe4
+6/13/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,45-60,1,Employe3
+6/13/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,45-60,1,Employe4
+6/13/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+6/13/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,30-45,1,Employe4
+6/13/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,45-60,1,Employe5
+6/13/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,15-30,1,Employe3
+6/13/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,M,15-30,1,Boss
+6/13/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,15-30,1,Employe4
+6/14/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,45-60,1,Employe4
+6/14/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,45-60,1,Boss
+6/14/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,15-30,1,Employe3
+6/14/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Boss
+6/14/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,45-60,1,Boss
+6/14/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,15-30,1,Boss
+6/14/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,45-60,1,Boss
+6/14/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+6/14/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+6/14/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+6/15/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,15-30,1,Employe4
+6/15/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,45-60,1,Employe4
+6/15/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,45-60,1,Employe4
+6/15/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+6/15/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,30-45,1,Employe3
+6/15/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,15-30,1,Employe4
+6/15/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,45-60,1,Employe3
+6/15/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+6/16/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+6/16/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,15-30,1,Employe4
+6/16/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,15-30,1,Employe3
+6/16/2017,Cloudy,Moderate,B,ModelB3,Gold,Optical,F,30-45,1,Boss
+6/16/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,30-45,1,Employe3
+6/16/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,15-30,1,Employe4
+6/16/2017,Sunny,Moderate,A,ModelA23,Blue,Solar_Opt,M,15-30,1,Employe3
+6/16/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,45-60,1,Employe4
+6/16/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,60 +,1,Employe3
+6/16/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,30-45,1,Boss
+6/17/2017,Cloudy,Moderate,B,ModelB3,Yellow,Optical,M,30-45,1,Employe3
+6/17/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+6/17/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,30-45,1,Boss
+6/17/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,45-60,1,Boss
+6/17/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,30-45,1,Employe5
+6/17/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,30-45,1,Employe4
+6/17/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+6/17/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,15-30,1,Boss
+6/17/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,60 +,1,Employe4
+6/17/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,60 +,1,Boss
+6/17/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,15-30,1,Employe4
+6/17/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Boss
+6/17/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+6/17/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+6/18/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,15-30,1,Employe4
+6/18/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+6/18/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,45-60,1,Employe4
+6/18/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,15-30,1,Employe3
+6/18/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+6/18/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,15-30,1,Boss
+6/18/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+6/18/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,30-45,1,Employe4
+6/18/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
+6/19/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,45-60,1,Boss
+6/19/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+6/19/2017,Sunny,Moderate,A,ModelA23,Blue,Solar_Opt,M,45-60,1,Employe3
+6/19/2017,Sunny,Moderate,C,ModelC1,Yellow,Optical,F,45-60,1,Employe4
+6/19/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,15-30,1,Employe4
+6/19/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,15-30,1,Employe4
+6/19/2017,Cloudy,Moderate,C,ModelC2,Gold,Solar,M,30-45,1,Boss
+6/19/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+6/19/2017,Cloudy,Moderate,A,ModelA6,Transparent,Optical,F,15-30,1,Boss
+6/19/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+6/19/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,60 +,1,Employe4
+6/20/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,15-30,1,Boss
+6/20/2017,Sunny,Moderate,A,ModelA6,Transparent,Solar,M,15-30,1,Employe4
+6/20/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+6/20/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,F,15-30,1,Employe3
+6/20/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,00-15,1,Employe5
+6/20/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,45-60,1,Employe3
+6/20/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,15-30,1,Boss
+6/20/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+6/21/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,45-60,1,Employe4
+6/21/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,45-60,1,Employe4
+6/21/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,45-60,1,Employe4
+6/21/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+6/21/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,30-45,1,Employe4
+6/21/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,30-45,1,Boss
+6/21/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+6/21/2017,Sunny,Moderate,A,ModelA6,Transparent,Solar,M,30-45,1,Employe4
+6/21/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+6/21/2017,Cloudy,Moderate,A,ModelA6,Transparent,Optical,F,15-30,1,Boss
+6/22/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,30-45,1,Employe3
+6/22/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe3
+6/22/2017,Sunny,Moderate,A,ModelA6,Silver,Optical,M,45-60,1,Employe4
+6/22/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,15-30,1,Boss
+6/22/2017,Sunny,Moderate,C,ModelC1,Yellow,Optical,F,15-30,1,Employe4
+6/23/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,45-60,1,Boss
+6/23/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+6/23/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
+6/23/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,15-30,1,Employe5
+6/23/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+6/23/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,45-60,1,Employe4
+6/23/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,30-45,1,Employe4
+6/24/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+6/24/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,30-45,1,Employe4
+6/24/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+6/24/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,45-60,1,Employe4
+6/24/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,15-30,1,Employe3
+6/24/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,15-30,1,Employe5
+6/24/2017,Cloudy,Moderate,B,ModelB3,Gold,Optical,F,30-45,1,Boss
+6/24/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,30-45,1,Employe3
+6/24/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,60 +,1,Employe4
+6/24/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+6/24/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+6/24/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+6/24/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+6/25/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,15-30,1,Employe5
+6/25/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,30-45,1,Employe4
+6/25/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,15-30,1,Employe4
+6/25/2017,Cloudy,Moderate,B,ModelB3,Yellow,Optical,M,45-60,1,Employe3
+6/25/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+6/25/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,15-30,1,Employe4
+6/25/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,60 +,1,Employe4
+6/26/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,15-30,1,Employe4
+6/26/2017,Cloudy,Moderate,C,ModelC2,Gold,Solar,M,15-30,1,Boss
+6/26/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+6/26/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,30-45,1,Boss
+6/26/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,15-30,1,Employe4
+6/26/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+6/27/2017,Cloudy,Moderate,A,ModelA6,Transparent,Optical,F,30-45,1,Boss
+6/27/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,15-30,1,Boss
+6/27/2017,Cloudy,Moderate,B,ModelB3,Yellow,Optical,M,15-30,1,Employe3
+6/27/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+6/27/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,45-60,1,Employe4
+6/27/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+6/27/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,15-30,1,Boss
+6/27/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
+6/28/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,45-60,1,Employe5
+6/28/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,15-30,1,Employe3
+6/28/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,45-60,1,Employe4
+6/28/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+6/28/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,60 +,1,Boss
+6/28/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,45-60,1,Employe4
+6/28/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+6/28/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+6/28/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,15-30,1,Boss
+6/28/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,30-45,1,Employe4
+6/28/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,60 +,1,Boss
+6/28/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+6/29/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,15-30,1,Employe5
+6/29/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+6/29/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,45-60,1,Employe4
+6/29/2017,Sunny,Moderate,A,ModelA23,Blue,Solar_Opt,M,60 +,1,Employe3
+6/29/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+6/29/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+6/29/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+6/30/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,15-30,1,Employe4
+6/30/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,45-60,1,Employe4
+6/30/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+6/30/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,45-60,1,Employe4
+6/30/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,45-60,1,Employe4
+6/30/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,15-30,1,Employe4
+6/30/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,15-30,1,Employe3
+6/30/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/1/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,15-30,1,Boss
+7/1/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+7/1/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/1/2017,Sunny,Moderate,A,ModelA6,Transparent,Solar,M,15-30,1,Employe4
+7/1/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,15-30,1,Employe4
+7/1/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,30-45,1,Employe4
+7/1/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,30-45,1,Employe4
+7/1/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+7/1/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,45-60,1,Boss
+7/1/2017,Cloudy,Moderate,B,ModelB3,Gold,Optical,F,15-30,1,Boss
+7/1/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,15-30,1,Employe3
+7/1/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+7/1/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/2/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,15-30,1,Employe3
+7/2/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,15-30,1,Employe3
+7/2/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,15-30,1,Employe4
+7/2/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,45-60,1,Employe4
+7/2/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,45-60,1,Boss
+7/2/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,15-30,1,Employe5
+7/2/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,M,45-60,1,Boss
+7/2/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,30-45,1,Employe4
+7/2/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,30-45,1,Employe5
+7/2/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+7/2/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+7/2/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,60 +,1,Employe4
+7/2/2017,Cloudy,Moderate,C,ModelC2,Gold,Solar,M,15-30,1,Boss
+7/2/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,30-45,1,Employe4
+7/2/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/2/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,15-30,1,Employe3
+7/2/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,30-45,1,Boss
+7/3/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,15-30,1,Boss
+7/3/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,15-30,1,Boss
+7/3/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,30-45,1,Employe3
+7/3/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,45-60,1,Employe4
+7/3/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,15-30,1,Boss
+7/3/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,15-30,1,Boss
+7/3/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+7/3/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/4/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,15-30,1,Employe3
+7/4/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,30-45,1,Employe4
+7/4/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,15-30,1,Boss
+7/4/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,60 +,1,Employe3
+7/4/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,30-45,1,Boss
+7/4/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,15-30,1,Employe4
+7/4/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,15-30,1,Employe4
+7/4/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+7/4/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,30-45,1,Employe4
+7/4/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+7/4/2017,Sunny,Moderate,A,ModelA6,Silver,Optical,M,15-30,1,Employe4
+7/5/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+7/5/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,30-45,1,Employe3
+7/5/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,15-30,1,Employe4
+7/5/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,15-30,1,Employe4
+7/5/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,45-60,1,Boss
+7/5/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,45-60,1,Boss
+7/5/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,45-60,1,Employe4
+7/5/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+7/5/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,45-60,1,Employe3
+7/5/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,30-45,1,Employe4
+7/5/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,45-60,1,Employe3
+7/5/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,30-45,1,Employe4
+7/5/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+7/5/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,30-45,1,Employe4
+7/5/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,15-30,1,Employe4
+7/6/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,30-45,1,Employe4
+7/6/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,M,30-45,1,Boss
+7/6/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,45-60,1,Employe4
+7/6/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,45-60,1,Employe4
+7/6/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,45-60,1,Employe5
+7/6/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,45-60,1,Employe4
+7/6/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,15-30,1,Employe4
+7/6/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,15-30,1,Boss
+7/6/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,15-30,1,Employe4
+7/6/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,F,30-45,1,Employe3
+7/6/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,45-60,1,Employe4
+7/6/2017,Sunny,Moderate,C,ModelC1,Yellow,Optical,F,60 +,1,Employe4
+7/7/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+7/7/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,30-45,1,Employe4
+7/7/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+7/7/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,45-60,1,Employe4
+7/7/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/7/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+7/7/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+7/7/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+7/7/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+7/7/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/7/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+7/7/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,45-60,1,Boss
+7/8/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,15-30,1,Employe4
+7/8/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+7/8/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,15-30,1,Employe3
+7/8/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,15-30,1,Employe3
+7/8/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,15-30,1,Employe4
+7/8/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+7/8/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,15-30,1,Employe5
+7/8/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+7/8/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+7/9/2017,Cloudy,Moderate,A,ModelA6,Transparent,Optical,F,45-60,1,Boss
+7/9/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+7/9/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,45-60,1,Employe3
+7/9/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,45-60,1,Employe3
+7/9/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,45-60,1,Employe3
+7/9/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,30-45,1,Employe5
+7/9/2017,Cloudy,Moderate,A,ModelA6,Transparent,Optical,F,30-45,1,Boss
+7/9/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
+7/9/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,30-45,1,Employe4
+7/9/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+7/10/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,15-30,1,Employe4
+7/10/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,15-30,1,Boss
+7/10/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,15-30,1,Employe5
+7/10/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+7/11/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,45-60,1,Employe4
+7/11/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,30-45,1,Employe3
+7/11/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+7/11/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,45-60,1,Employe4
+7/11/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,60 +,1,Employe4
+7/11/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+7/11/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,45-60,1,Employe5
+7/11/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,30-45,1,Employe4
+7/11/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+7/12/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,30-45,1,Employe4
+7/12/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/12/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,F,30-45,1,Employe3
+7/12/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,15-30,1,Boss
+7/12/2017,Sunny,Moderate,C,ModelC1,Yellow,Optical,F,60 +,1,Employe4
+7/12/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+7/12/2017,Cloudy,Moderate,C,ModelC2,Gold,Solar,M,15-30,1,Boss
+7/12/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+7/13/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,30-45,1,Employe4
+7/13/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,30-45,1,Boss
+7/13/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,15-30,1,Boss
+7/13/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,15-30,1,Employe3
+7/13/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+7/13/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,60 +,1,Employe4
+7/14/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,15-30,1,Boss
+7/14/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,30-45,1,Employe4
+7/14/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,45-60,1,Employe4
+7/14/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,30-45,1,Boss
+7/14/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+7/14/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,30-45,1,Boss
+7/14/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,60 +,1,Employe4
+7/14/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,15-30,1,Employe4
+7/14/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,15-30,1,Employe4
+7/15/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,15-30,1,Boss
+7/15/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,45-60,1,Boss
+7/15/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+7/15/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,30-45,1,Employe4
+7/16/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,45-60,1,Employe4
+7/16/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,45-60,1,Employe5
+7/16/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,45-60,1,Employe5
+7/16/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+7/17/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+7/17/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,30-45,1,Employe4
+7/17/2017,Sunny,Moderate,A,ModelA23,Blue,Solar_Opt,M,45-60,1,Employe3
+7/17/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+7/17/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,30-45,1,Employe3
+7/17/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+7/17/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+7/18/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
+7/18/2017,Cloudy,Moderate,B,ModelB3,Gold,Optical,F,30-45,1,Boss
+7/18/2017,Cloudy,Warm,C,ModelC1,Green,Optical,F,15-30,1,Employe4
+7/18/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,45-60,1,Employe4
+7/18/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,30-45,1,Boss
+7/18/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,45-60,1,Employe3
+7/18/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,M,45-60,1,Boss
+7/18/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,60 +,1,Boss
+7/18/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+7/18/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,30-45,1,Employe4
+7/18/2017,Cloudy,Moderate,B,ModelB3,Yellow,Optical,M,30-45,1,Employe3
+7/18/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+7/19/2017,Cloudy,Moderate,B,ModelB3,Yellow,Optical,M,30-45,1,Employe3
+7/19/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,45-60,1,Employe4
+7/19/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,30-45,1,Boss
+7/19/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,30-45,1,Employe3
+7/19/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+7/19/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,45-60,1,Employe4
+7/19/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,15-30,1,Employe5
+7/19/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,45-60,1,Employe4
+7/19/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+7/19/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+7/19/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,15-30,1,Employe3
+7/19/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,30-45,1,Employe4
+7/20/2017,Sunny,Moderate,A,ModelA6,Transparent,Solar,M,45-60,1,Employe4
+7/20/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,45-60,1,Employe5
+7/20/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,45-60,1,Employe4
+7/20/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,15-30,1,Employe4
+7/20/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,30-45,1,Employe4
+7/20/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+7/20/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+7/20/2017,Sunny,Moderate,A,ModelA23,Orange,Solar,M,15-30,1,Employe3
+7/20/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,15-30,1,Employe4
+7/20/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,15-30,1,Employe4
+7/20/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,45-60,1,Boss
+7/20/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,M,15-30,1,Boss
+7/20/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
+7/20/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,30-45,1,Employe4
+7/20/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+7/21/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,30-45,1,Boss
+7/21/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,15-30,1,Boss
+7/21/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+7/21/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,30-45,1,Employe3
+7/21/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+7/21/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+7/21/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,60 +,1,Employe3
+7/21/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,45-60,1,Employe5
+7/22/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+7/22/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,15-30,1,Boss
+7/22/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+7/22/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+7/22/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+7/22/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+7/23/2017,Sunny,Moderate,C,ModelC2,Black,Optical,M,45-60,1,Employe4
+7/23/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,30-45,1,Employe4
+7/23/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,30-45,1,Boss
+7/23/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,45-60,1,Boss
+7/23/2017,Sunny,Moderate,A,ModelA6,Silver,Optical,M,45-60,1,Employe4
+7/23/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+7/23/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,30-45,1,Boss
+7/23/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,30-45,1,Employe4
+7/23/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,15-30,1,Employe4
+7/23/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,30-45,1,Employe4
+7/23/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,30-45,1,Employe5
+7/23/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,15-30,1,Boss
+7/23/2017,Sunny,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Employe3
+7/23/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,45-60,1,Boss
+7/23/2017,Cloudy,Moderate,C,ModelC2,Gold,Solar,M,15-30,1,Boss
+7/23/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,15-30,1,Employe4
+7/23/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+7/23/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,15-30,1,Boss
+7/23/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+7/24/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,30-45,1,Employe4
+7/24/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,30-45,1,Employe4
+7/24/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,45-60,1,Employe4
+7/24/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+7/24/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,30-45,1,Employe5
+7/24/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,15-30,1,Employe4
+7/24/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+7/25/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,45-60,1,Employe4
+7/25/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+7/25/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,30-45,1,Employe5
+7/25/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+7/25/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+7/26/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,15-30,1,Employe4
+7/26/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,30-45,1,Employe5
+7/26/2017,Cloudy,Warm,A,ModelA3,Orange,Solar,F,15-30,1,Employe5
+7/26/2017,Sunny,Moderate,C,ModelC1,Yellow,Optical,F,15-30,1,Employe4
+7/26/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
+7/26/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,15-30,1,Employe4
+7/26/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,30-45,1,Employe4
+7/26/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,30-45,1,Employe4
+7/26/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Boss
+7/26/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,15-30,1,Boss
+7/26/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,30-45,1,Employe4
+7/27/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+7/27/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+7/27/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,45-60,1,Employe4
+7/27/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,45-60,1,Employe4
+7/27/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,15-30,1,Employe4
+7/27/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+7/27/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+7/28/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+7/28/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,45-60,1,Employe4
+7/28/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,45-60,1,Boss
+7/28/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+7/28/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,60 +,1,Employe4
+7/28/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+7/28/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,15-30,1,Employe4
+7/29/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,15-30,1,Boss
+7/29/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,45-60,1,Employe3
+7/29/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,45-60,1,Employe5
+7/29/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+7/29/2017,Cloudy,Moderate,B,ModelB3,Gold,Optical,F,30-45,1,Boss
+7/29/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,15-30,1,Employe4
+7/29/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+7/29/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+7/29/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,30-45,1,Employe4
+7/30/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,45-60,1,Employe4
+7/30/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,30-45,1,Boss
+7/30/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+7/30/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,30-45,1,Employe4
+7/30/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,30-45,1,Employe4
+7/30/2017,Cloudy,Moderate,A,ModelA6,Transparent,Optical,F,30-45,1,Boss
+7/30/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,15-30,1,Boss
+7/30/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,30-45,1,Employe4
+7/30/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+7/30/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,45-60,1,Employe3
+7/30/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,45-60,1,Employe4
+7/30/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,45-60,1,Employe4
+7/30/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,45-60,1,Employe4
+7/30/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe4
+7/31/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,15-30,1,Employe4
+7/31/2017,Sunny,Moderate,A,ModelA24,Pink,Optical,F,15-30,1,Employe4
+7/31/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,60 +,1,Boss
+7/31/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+7/31/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,45-60,1,Boss
+7/31/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,15-30,1,Employe5
+7/31/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,30-45,1,Employe4
+7/31/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,30-45,1,Employe4
+7/31/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,45-60,1,Boss
+7/31/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,45-60,1,Boss
+7/31/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,30-45,1,Boss
+7/31/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,30-45,1,Employe4
+8/1/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,15-30,1,Boss
+8/1/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,30-45,1,Boss
+8/1/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,15-30,1,Employe4
+8/1/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar_Opt,F,30-45,1,Boss
+8/1/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+8/1/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,30-45,1,Employe3
+8/1/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,15-30,1,Employe3
+8/1/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,30-45,1,Employe4
+8/1/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,30-45,1,Employe4
+8/1/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,15-30,1,Boss
+8/1/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,45-60,1,Boss
+8/1/2017,Sunny,Moderate,A,ModelA28,Green,Optical,M,45-60,1,Employe4
+8/1/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,15-30,1,Employe4
+8/2/2017,Sunny,Moderate,A,ModelA16,Black,Solar,M,45-60,1,Boss
+8/2/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,30-45,1,Employe4
+8/2/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/2/2017,Sunny,Moderate,A,ModelA6,Blue,Optical,M,45-60,1,Employe4
+8/2/2017,Cloudy + Rainy,Moderate,B,ModelB4,Blue,Solar,F,30-45,1,Boss
+8/2/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,60 +,1,Employe4
+8/2/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,45-60,1,Employe4
+8/2/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/2/2017,Sunny,Moderate,A,ModelA23,Blue,Solar_Opt,M,60 +,1,Employe3
+8/2/2017,Sunny,Moderate,A,ModelA3,Orange,Optical,F,15-30,1,Employe3
+8/2/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,15-30,1,Boss
+8/2/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+8/3/2017,Sunny,Moderate,A,ModelA23,Blue,Solar,F,45-60,1,Employe4
+8/3/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,45-60,1,Employe4
+8/3/2017,Sunny,Moderate,A,ModelA1,Brown,Solar,F,45-60,1,Boss
+8/3/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,15-30,1,Employe5
+8/3/2017,Sunny,Moderate,A,ModelA27,Green,Optical,F,30-45,1,Employe4
+8/3/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,30-45,1,Employe4
+8/3/2017,Sunny,Moderate,C,ModelC2,Yellow,Solar,F,30-45,1,Boss
+8/3/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+8/3/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+8/4/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,15-30,1,Employe3
+8/4/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,15-30,1,Employe4
+8/4/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,45-60,1,Employe4
+8/4/2017,Sunny,Moderate,A,ModelA23,Blue,Solar_Opt,M,45-60,1,Employe3
+8/4/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,30-45,1,Employe4
+8/4/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,15-30,1,Employe4
+8/4/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+8/4/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,45-60,1,Employe4
+8/4/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,15-30,1,Employe4
+8/4/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+8/4/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+8/4/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+8/5/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+8/5/2017,Cloudy,Moderate,C,ModelC2,Gold,Solar,M,15-30,1,Boss
+8/5/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+8/5/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,30-45,1,Boss
+8/5/2017,Cloudy,Warm,A,ModelA8,Black,Solar,F,15-30,1,Employe4
+8/5/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/5/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+8/5/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,15-30,1,Employe4
+8/5/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,15-30,1,Employe3
+8/5/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,30-45,1,Employe4
+8/5/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,F,30-45,1,Employe3
+8/5/2017,Sunny,Moderate,A,ModelA21,Orange,Optical,F,30-45,1,Boss
+8/5/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,15-30,1,Employe4
+8/5/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,30-45,1,Employe4
+8/5/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,30-45,1,Boss
+8/5/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,30-45,1,Boss
+8/5/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/6/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,45-60,1,Employe4
+8/6/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+8/6/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+8/6/2017,Sunny,Moderate,A,ModelA6,Silver,Optical,M,15-30,1,Employe4
+8/6/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,30-45,1,Employe4
+8/6/2017,Sunny,Moderate,A,ModelA3,Transparent,Optical,F,15-30,1,Employe4
+8/7/2017,Sunny,Moderate,A,ModelA12,Brown,Optical,F,45-60,1,Employe4
+8/7/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,15-30,1,Boss
+8/7/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+8/7/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,30-45,1,Employe3
+8/7/2017,Sunny,Moderate,B,ModelB3,Yellow,Optical,F,45-60,1,Employe4
+8/7/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,15-30,1,Employe4
+8/7/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+8/7/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+8/7/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/7/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,30-45,1,Employe4
+8/7/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+8/7/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,60 +,1,Employe4
+8/7/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,15-30,1,Employe3
+8/7/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,15-30,1,Boss
+8/7/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/8/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,45-60,1,Employe3
+8/8/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,30-45,1,Employe4
+8/8/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+8/8/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+8/8/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,30-45,1,Employe4
+8/8/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,45-60,1,Employe3
+8/8/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+8/8/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,45-60,1,Employe4
+8/8/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+8/8/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+8/8/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,30-45,1,Employe5
+8/8/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,60 +,1,Employe3
+8/8/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+8/8/2017,Cloudy,Moderate,C,ModelC2,Yellow,Optical,F,30-45,1,Employe5
+8/9/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+8/9/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/9/2017,Sunny,Moderate,C,ModelC3,Red,Solar,M,30-45,1,Boss
+8/10/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+8/10/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/10/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+8/10/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,45-60,1,Employe4
+8/10/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,45-60,1,Employe4
+8/10/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+8/10/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,15-30,1,Employe4
+8/10/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,30-45,1,Boss
+8/10/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,45-60,1,Employe4
+8/10/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/10/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,60 +,1,Employe3
+8/10/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/11/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,15-30,1,Employe4
+8/11/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/11/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+8/11/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,60 +,1,Employe4
+8/11/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/11/2017,Sunny,Moderate,A,ModelA3,Orange,Solar,F,60 +,1,Employe4
+8/12/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/12/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,45-60,1,Employe4
+8/12/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,15-30,1,Employe4
+8/12/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+8/12/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+8/12/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+8/12/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+8/12/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+8/12/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,60 +,1,Employe3
+8/12/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/12/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+8/13/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,15-30,1,Employe4
+8/13/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,45-60,1,Boss
+8/13/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,60 +,1,Employe4
+8/13/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+8/13/2017,Sunny,Moderate,B,ModelB2,Blue,Optical,F,30-45,1,Employe4
+8/14/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,00-15,1,Employe4
+8/14/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,15-30,1,Employe5
+8/14/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+8/14/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,15-30,1,Boss
+8/14/2017,Sunny,Moderate,A,ModelA1,Blue,Solar_Opt,F,45-60,1,Employe3
+8/14/2017,Cloudy,Moderate,C,ModelC2,Yellow,Frame,F,15-30,1,Boss
+8/15/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,30-45,1,Boss
+8/15/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,45-60,1,Boss
+8/15/2017,Sunny,Moderate,B,ModelB3,Gold,Optical,F,45-60,1,Employe4
+8/15/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+8/16/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+8/16/2017,Cloudy,Moderate,A,ModelA22,Pink,Solar,F,45-60,1,Employe3
+8/16/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+8/16/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+8/16/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+8/16/2017,Partly Cloudy,Moderate,B,ModelB3,Yellow,Optical,F,15-30,1,Employe3
+8/17/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+8/17/2017,Sunny,Moderate,A,ModelA16,Shiny,Optical,M,60 +,1,Employe4
+8/17/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,30-45,1,Employe4
+8/17/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,45-60,1,Employe4
+8/17/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/17/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,30-45,1,Boss
+8/17/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,60 +,1,Employe4
+8/17/2017,Sunny,Moderate,C,ModelC1,Black,Solar,F,45-60,1,Employe4
+8/17/2017,Sunny,Hot,A,ModelA7,Gray,Solar,M,15-30,1,Employe5
+8/18/2017,Sunny,Moderate,C,ModelC2,Blue,Optical,M,30-45,1,Employe4
+8/18/2017,Sunny,Moderate,A,ModelA9,Brown,Optical,F,45-60,1,Employe4
+8/18/2017,Sunny,Moderate,B,ModelB4,Transparent,Solar,F,30-45,1,Employe4
+8/18/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,15-30,1,Employe4
+8/18/2017,Sunny,Moderate,C,ModelC1,Yellow,Solar,M,15-30,1,Employe4
+8/18/2017,Partly Cloudy,Moderate,A,ModelA6,Blue,Solar_Opt,M,45-60,1,Boss
+8/19/2017,Sunny,Moderate,C,ModelC3,Red,Solar,F,30-45,1,Employe3
+8/19/2017,Sunny,Moderate,A,ModelA8,Black,Solar,M,15-30,1,Boss
+8/19/2017,Sunny,Moderate,C,ModelC2,Gold,Optical,M,30-45,1,Employe4
+8/19/2017,Cloudy,Moderate,C,ModelC1,Yellow,Solar,M,60 +,1,Employe3
+8/20/2017,Cloudy,Moderate,A,ModelA12,Black,Optical,F,15-30,1,Employe3
+8/20/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+8/20/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,00-15,1,Employe4
+8/21/2017,Cloudy + Rainy,Moderate,A,ModelA6,Blue,Solar,M,15-30,1,Boss
+8/21/2017,Sunny,Moderate,A,ModelA9,Black,Solar,M,45-60,1,Employe4
+8/21/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,15-30,1,Employe4
+8/22/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,45-60,1,Employe4
+8/22/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,15-30,1,Employe4
+8/22/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/22/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,45-60,1,Employe4
+8/22/2017,Sunny,Hot,B,ModelB3,Gold,Solar,M,15-30,1,Employe5
+8/22/2017,Sunny,Hot,A,ModelA6,Blue,Solar,F,15-30,1,Employe4
+8/22/2017,Sunny,Moderate,A,ModelA13,Black,Solar,M,45-60,1,Boss
+8/23/2017,Sunny,Moderate,A,ModelA24,Black,Solar,F,15-30,1,Employe3
+8/23/2017,Sunny,Hot,A,ModelA3,Orange,Optical,F,15-30,1,Employe4
+8/23/2017,Cloudy,Warm,C,ModelC2,Gold,Solar,M,30-45,1,Employe5
+8/23/2017,Sunny,Moderate,A,ModelA1,Pink,Solar,F,60 +,1,Employe4
+8/23/2017,Sunny,Hot,A,ModelA8,Black,Solar,M,15-30,1,Employe4
+8/24/2017,Sunny,Moderate,A,ModelA17,Silver,Solar,M,15-30,1,Employe4
+8/24/2017,Sunny,Moderate,C,ModelC3,Black,Solar,M,30-45,1,Boss
+8/27/2017,Cloudy + Rainy,Moderate,C,ModelC2,Gold,Optical,F,30-45,1,Boss
